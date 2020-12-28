@@ -179,7 +179,7 @@ endif
   hi! Constant guibg=NONE guifg=#534946 guisp=NONE gui=bold
   hi! Statement guibg=NONE guifg=#534946 guisp=NONE gui=NONE
   hi! PreProc guibg=NONE guifg=#534946 guisp=NONE gui=NONE
-  hi! Type guibg=NONE guifg=#534946 guisp=NONE gui=NONE
+  hi! Type guibg=NONE guifg=#534946 guisp=NONE gui=italic
   hi! Special guibg=NONE guifg=#534946 guisp=NONE gui=NONE
   hi! Underlined guibg=NONE guifg=#534946 guisp=NONE gui=underline
   " For these colors I typically use a darker lightness of the bg for the fg
@@ -188,10 +188,25 @@ endif
   hi! Ignore guibg=#F5F1F0 guifg=#534946 guisp=NONE gui=NONE
 
 " -------------- More granular groups -----------
+" -------------- XML ----------------------------
+  hi! link xmlProcessingDelim Normal
+  hi xmlTagName guifg=NONE guibg=NONE guisp=NONE gui=NONE
 
-" -------------- Vim Comments -------------------
+" -------------- Vim Script ---------------------
+  " v-- These are normally linked to Type, which is italicized, leading to
+  " lots of italics in this file
+  hi! link vimGroup Normal
+  hi! link vimHiGui Normal
+  hi! link vimHiGroup Normal
+  hi! link vimHiGuiFgBg Normal
   hi! vimCommentTitle guifg=NONE guibg=#EBE2E0 guisp=NONE gui=underline
   hi! vimCommentTitleLeader guifg=NONE guibg=#EBE2E0 guisp=NONE gui=NONE
+
+" -------------- Help Text ----------------------
+  hi! helpHyperTextJump guifg=NONE guifg=NONE gui=underline guisp=NONE
+  " v-- Making this underlined can have weird effects since sometimes a
+  " helpHeadline is empty and then you just have a weird line
+  hi! helpHeadline guifg=NONE guibg=NONE guisp=NONE gui=bold
 
 " -------------- vim-sneak ----------------------
   hi! link Sneak Visual
