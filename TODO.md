@@ -1,0 +1,1 @@
+- [x] `:ts` has too many underlines

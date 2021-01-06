@@ -92,7 +92,8 @@ hi! Normal guibg=#F5F1F0 guifg=#534946 guisp=NONE
   " v-- AA only but okay since it's not supposed to be in focus
   hi! TabLine guibg=NONE guifg=NONE gui=NONE guisp=NONE
   hi! link TabLineFill TabLine
-  hi! TabLineSel guibg=NONE guifg=NONE guisp=NONE gui=bold,underline
+  " v-- This also applies to a lot of stuff in :ts, better not underline it
+  hi! TabLineSel guibg=NONE guifg=NONE guisp=NONE gui=bold,none
   " v-- This is for the number of panes in the current tab shown in the top
   " left corner
   hi! link Title TabLineSel
@@ -114,7 +115,8 @@ hi! Normal guibg=#F5F1F0 guifg=#534946 guisp=NONE
   hi! TermCursorNC guifg=bg guibg=#8A7A75
 
 " -------------- Whatever -----------------------
-  " v-- Strangely, this affects the attributes in the command line doing :hi
+  " o-- Strangely, this affects the attributes in the command line doing :hi
+  " v   This also applies to the path to a tag when doing :ts
   hi! Directory guifg=NONE guibg=NONE guisp=NONE gui=underline
   hi! link ErrorMsg Error
   hi! VertSplit guibg=#B9AFAC guifg=bg
@@ -129,7 +131,8 @@ hi! Normal guibg=#F5F1F0 guifg=#534946 guisp=NONE
   hi! link MoreMsg Normal
   hi! link MsgArea Normal
   hi! link MsgSeparator Normal
-  hi! link NormalFloat Normal
+  " v-- All sorts of popups, including LSP floating windows
+  hi! link NormalFloat Pmenu
   hi! link NormalNC Normal
   " This is not just a different hue from the other light palette colors, it's
   " also slightly more saturated. Yellow is really hard to see on a light grey
@@ -219,3 +222,30 @@ endif
    hi! link DirvishArg Search
    " v-- directories
    hi! DirvishPathTail guifg=NONE guibg=NONE guisp=NONE gui=bold
+
+" -------------- markdown -----------------------
+   hi! markdownHeadingDelimiter guifg=NONE guibg=NONE guisp=NONE gui=underline
+   hi! link markdownH1Delimiter markdownHeadingDelimiter
+   " hi! link markdownH2Delimiter markdownH1Delimiter
+   " hi! link markdownH3Delimiter markdownH1Delimiter
+   " hi! link markdownH4Delimiter markdownH1Delimiter
+   " hi! link markdownH5Delimiter markdownH1Delimiter
+   " hi! link markdownH6Delimiter markdownH1Delimiter
+   hi! mkdHeading guifg=NONE guibg=NONE guisp=NONE gui=underline
+   hi! markdownCode guifg=NONE guibg=NONE guisp=NONE gui=bold
+   hi! link markdownCodeDelimiter folded
+   hi! markdownBold guifg=NONE guibg=NONE guisp=NONE gui=bold
+   hi! link markdownBoldDelimiter folded
+   hi! markdownItalic guifg=NONE guibg=NONE guisp=NONE gui=italic
+   hi! link markdownItalicDelimiter folded
+   hi! markdownBoldItalic guifg=NONE guibg=NONE guisp=NONE gui=italic,bold
+   hi! link markdownBoldItalicDelimiter folded
+   hi! markdownUrl guifg=NONE guibg=NONE guisp=NONE gui=underline
+   hi! link markdownLinkDelimiter folded
+   hi! link markdownLinkDelimiter folded
+   hi! markdownLinkText guifg=NONE guibg=NONE guisp=NONE gui=NONE
+   hi! link markdownLinkTextDelimiter folded
+
+" -------------- LSP ----------------------------
+   hi! link LspDiagnosticsDefaultError Error
+   hi! link LspDiagnosticsDefaultWarning WarningMsg
