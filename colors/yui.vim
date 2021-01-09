@@ -249,3 +249,9 @@ endif
 " -------------- LSP ----------------------------
    hi! link LspDiagnosticsDefaultError Error
    hi! link LspDiagnosticsDefaultWarning WarningMsg
+
+" -------------- Git ----------------------------
+  hi! link diffAdded DiffAdd
+  hi! link diffRemoved DiffDelete
+  hi! link diffComment Comment
+  hi! link diffChanged DiffChange

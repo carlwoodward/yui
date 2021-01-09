@@ -1,1 +1,2 @@
 - [x] `:ts` has too many underlines
+- [x] diffRemoved diffAdded etc.
