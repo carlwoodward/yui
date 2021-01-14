@@ -36,9 +36,11 @@ let g:colors_name = 'yui'
 " #4D4000 - Yellow
 " #751400 - Red
 " #304D00 - Green
+" #5137e1 - Purple
+" #DCD7F9 - Light Purple
 " #DBF9FF - Light Cyan
 " #FFF5C4 - Light Yellow
-" #F2FFDB - Light Green
+" #E3FFB3 - Light Green
 " #FFDBE7 - Light Magenta
 " #DBEAFF - Light Blue
 " #FFCABF - Light Red
@@ -86,7 +88,8 @@ hi! Normal guibg=#F5F1F0 guifg=#534946 guisp=NONE
 " -------------- Statusline ---------------------
   hi! StatusLine guifg=bg guibg=fg gui=bold guisp=NONE
   hi! StatusLineNC guibg=#E0D4D1 guifg=fg gui=NONE guisp=NONE
-  hi! WildMenu guibg=#FFFFFF guifg=fg guisp=NONE gui=NONE
+  " hi! WildMenu guibg=#FFFFFF guifg=fg guisp=NONE gui=NONE
+  hi! WildMenu guibg=#5137e1 guifg=#DCD7F9 guisp=NONE gui=NONE
 
 " -------------- Tabline ------------------------
   " v-- AA only but okay since it's not supposed to be in focus
@@ -108,7 +111,7 @@ hi! Normal guibg=#F5F1F0 guifg=#534946 guisp=NONE
   hi! Pmenu guifg=NONE guibg=#EBE2E0 guisp=NONE gui=NONE
   hi! PmenuThumb guifg=NONE guibg=fg guisp=NONE gui=NONE
   hi! link PmenuSbar PMenu
-  hi! PmenuSel guibg=#FFFFFF guifg=fg guisp=NONE gui=NONE
+  hi! PmenuSel guibg=#5137e1 guifg=#DCD7F9 guisp=NONE gui=NONE
 
 " -------------- Terminal -----------------------
   hi! link TermCursor Cursor
@@ -137,7 +140,7 @@ hi! Normal guibg=#F5F1F0 guifg=#534946 guisp=NONE
   " This is not just a different hue from the other light palette colors, it's
   " also slightly more saturated. Yellow is really hard to see on a light grey
   " background.
-  hi! WarningMsg guibg=#FFF5C4 guifg=#4D4000 gui=bold
+  hi! WarningMsg guibg=#FFF5C4 guifg=#4D4000 gui=NONE
   " v-- Not even AA since I want these characters to fade away
   hi! Whitespace guifg=#B9AFAC guibg=NONE guisp=NONE gui=NONE
   " v-- I'm not really sure how this is different from Whitespace
@@ -160,15 +163,15 @@ if !has('nvim')
 endif
 
 " -------------- Diffs --------------------------
-  hi! DiffAdd guifg=#304D00 guibg=#F2FFDB guisp=NONE gui=NONE
+  hi! DiffAdd guifg=#304D00 guibg=#E3FFB3 guisp=NONE gui=NONE
   hi! DiffChange guifg=#4D4000 guibg=#FFF5C4 guisp=NONE gui=NONE
   hi! DiffText guifg=#4D4000 guibg=#FFF5C4 guisp=NONE gui=bold
   hi! DiffDelete guifg=#751400 guibg=#FFCABF guisp=NONE gui=NONE
 
 " -------------- Search & Replace ---------------
-  hi! IncSearch guibg=#FFB3B3 guifg=#700000 guisp=NONE gui=bold
+  hi! Search guibg=#DCD7F9 guifg=#5137e1 guisp=NONE gui=bold
   " hi! IncSearch guibg=#DBEAFF guifg=#004AB3 guisp=NONE gui=NONE
-  hi! Search guibg=#FFE6E6 guifg=#B30000 guisp=NONE gui=NONE
+  hi! IncSearch guibg=#5137e1 guifg=#DCD7F9 guisp=NONE gui=NONE
   " hi! Search guibg=#E0D4D1 guifg=NONE guisp=NONE gui=NONE
   " hi! Substitute guibg=NONE guifg=NONE guisp=NONE gui=underline
   hi! link Substitute IncSearch
@@ -186,7 +189,7 @@ endif
   hi! Special guibg=NONE guifg=#534946 guisp=NONE gui=NONE
   hi! Underlined guibg=NONE guifg=#534946 guisp=NONE gui=underline
   " For these colors I typically use a darker lightness of the bg for the fg
-  hi! Error guibg=#FFCABF guifg=#751400 guisp=NONE gui=bold
+  hi! Error guibg=#FFCABF guifg=#751400 guisp=NONE gui=NONE
   hi! link Todo WarningMsg
   hi! Ignore guibg=#F5F1F0 guifg=#534946 guisp=NONE gui=NONE
 
