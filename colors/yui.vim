@@ -37,6 +37,7 @@ let g:colors_name = 'yui'
 " #751400 - Red
 " #304D00 - Green
 " #5137e1 - Purple
+" #627CAC - Blue/Grey
 " #DCD7F9 - Light Purple
 " #DBF9FF - Light Cyan
 " #FFF5C4 - Light Yellow
@@ -65,9 +66,9 @@ let g:colors_name = 'yui'
 " #B9AFAC - 70%
 " #8A7A75 - 50%
 " #6e625e - 40%
-" #534946 - 30% DEFAULT
-" #292523 - 15%
-" #1c1817 - 10%
+" #534946 - 30% DEFAULT FG
+" #2D2320 - 15%
+" #201613 - 10%
 hi! Normal guibg=#F5F1F0 guifg=#534946 guisp=NONE
 
 " -------------- Cursor Stuff -------------------
@@ -129,7 +130,7 @@ hi! Normal guibg=#F5F1F0 guifg=#534946 guisp=NONE
   " rest of the text. I've actually been bitten by this when hastily editing
   " CSV files and what I thought were | were actually , in disguise
   hi! Conceal guifg=NONE guibg=NONE guisp=NONE gui=undercurl
-  hi! MatchParen guifg=NONE guibg=NONE guisp=NONE gui=underline
+  hi! MatchParen guifg=NONE guibg=#E0D4D1 guisp=NONE gui=underline,bold
   hi! link ModeMsg Normal
   hi! link MoreMsg Normal
   hi! link MsgArea Normal
@@ -145,10 +146,11 @@ hi! Normal guibg=#F5F1F0 guifg=#534946 guisp=NONE
   hi! Whitespace guifg=#B9AFAC guibg=NONE guisp=NONE gui=NONE
   " v-- I'm not really sure how this is different from Whitespace
   hi! link SpecialKey Whitespace
-  hi! Visual guifg=#292523 guibg=#D6C6C2 guisp=NONE gui=NONE
+  hi! link Visual Search
   " v-- I don't know which actions trigger VisualNOS
   hi! link VisualNOS Visual
   hi! link Question Normal
+  hi! link EndOfBuffer Normal
 
 " -------------- Spellchecker -------------------
   hi! link SpellBad ErrorMsg
@@ -169,29 +171,31 @@ endif
   hi! DiffDelete guifg=#751400 guibg=#FFCABF guisp=NONE gui=NONE
 
 " -------------- Search & Replace ---------------
-  hi! Search guibg=#DCD7F9 guifg=#5137e1 guisp=NONE gui=bold
+  hi! Search guibg=#DCD7F9 guifg=#5137e1 guisp=NONE gui=NONE
   " hi! IncSearch guibg=#DBEAFF guifg=#004AB3 guisp=NONE gui=NONE
-  hi! IncSearch guibg=#5137e1 guifg=#DCD7F9 guisp=NONE gui=NONE
+  hi! IncSearch guibg=#5137e1 guifg=#DCD7F9 guisp=NONE gui=bold
   " hi! Search guibg=#E0D4D1 guifg=NONE guisp=NONE gui=NONE
   " hi! Substitute guibg=NONE guifg=NONE guisp=NONE gui=underline
   hi! link Substitute IncSearch
 
 " -------------- Preferred groups ---------------
   " :h group-name
-  " hi! Comment guibg=NONE guifg=#004AB3 guisp=NONE gui=italic
-  hi! Comment guibg=#EBE2E0 guifg=fg guisp=NONE gui=italic
-  " hi! Comment guibg=NONE guifg=#1c1817 guisp=NONE gui=italic
-  hi! Identifier guibg=NONE guifg=#534946 guisp=NONE gui=NONE
-  hi! Constant guibg=NONE guifg=#534946 guisp=NONE gui=bold
-  hi! Statement guibg=NONE guifg=#534946 guisp=NONE gui=NONE
-  hi! PreProc guibg=NONE guifg=#534946 guisp=NONE gui=NONE
-  hi! Type guibg=NONE guifg=#534946 guisp=NONE gui=italic
-  hi! Special guibg=NONE guifg=#534946 guisp=NONE gui=NONE
-  hi! Underlined guibg=NONE guifg=#534946 guisp=NONE gui=underline
+  " hi! Comment guibg=NONE guifg=#5137e1 guisp=NONE gui=italic,bold
+  hi! Comment guibg=#EBE2E0 guifg=NONE guisp=NONE gui=NONE
+  " hi! Comment guibg=NONE guifg=NONE guisp=NONE gui=italic
+		" hi! Comment guibg=NONE guifg=#5137e1 guisp=NONE gui=italic
+  " hi! Comment guibg=NONE guifg=#6e625e guisp=NONE gui=italic
+	hi! Identifier guibg=NONE guifg=fg guisp=NONE gui=NONE
+  hi! Constant guibg=NONE guifg=#201613 guisp=NONE gui=NONE
+  hi! Statement guibg=NONE guifg=fg guisp=NONE gui=italic
+  hi! PreProc guibg=NONE guifg=fg guisp=NONE gui=NONE
+  hi! Type guibg=NONE guifg=fg guisp=NONE gui=italic
+  hi! Special guibg=NONE guifg=fg guisp=NONE gui=NONE
+  hi! Underlined guibg=NONE guifg=fg guisp=NONE gui=underline
   " For these colors I typically use a darker lightness of the bg for the fg
   hi! Error guibg=#FFCABF guifg=#751400 guisp=NONE gui=NONE
   hi! link Todo WarningMsg
-  hi! Ignore guibg=#F5F1F0 guifg=#534946 guisp=NONE gui=NONE
+  hi! Ignore guibg=#F5F1F0 guifg=fg guisp=NONE gui=NONE
 
 " -------------- More granular groups -----------
 " -------------- XML ----------------------------
@@ -225,6 +229,9 @@ endif
    hi! link DirvishArg Search
    " v-- directories
    hi! DirvishPathTail guifg=NONE guibg=NONE guisp=NONE gui=bold
+
+" -------------- quickfix -----------------------
+   hi! link quickfixline Visual
 
 " -------------- markdown -----------------------
    hi! markdownHeadingDelimiter guifg=NONE guibg=NONE guisp=NONE gui=underline
